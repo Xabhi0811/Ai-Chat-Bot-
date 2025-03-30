@@ -1,0 +1,124 @@
+this my html file <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Public Safety Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+          background-image: url('https://images.prismic.io/intuzwebsite/d9daef05-a416-4e84-b0f8-2d5e2e3b58d8_A+Comprehensive+Guide+to+Building+an+AI+Chatbot%402x.png?w=2400&q=80&auto=format,compress&fm=png8'); 
+            background-size: cover;
+            text-align: center;
+            padding: 20px;
+            background-color: #d4f1f4;
+        }
+        .chat-container {
+            width: 90%;
+            max-width: 500px;
+            background: #fbe5c8;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: auto;
+            padding: 20px;
+        }
+        #chat-box {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            background: #fafafa;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        input {
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .emergency-btn {
+            background-color: red;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .faq {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .faq h3 {
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>AI-Powered Public Safety Chatbot</h2>
+    <div class="chat-container">
+        <div id="chat-box"></div>
+        <input type="text" id="user-input" placeholder="Ask me anything about safety...">
+        <button onclick="sendMessage()">Send</button>
+        <button class="emergency-btn" onclick="showEmergencyInfo()">Emergency Info</button>
+    </div>
+    <div class="faq">
+        <h3>Frequently Asked Questions:</h3>
+        <p><b>Q:</b> How can I reset my password?</p>
+        <p><b>A:</b> Click on "Forgot Password" on the login page and follow the instructions.</p>
+        <p><b>Q:</b> What are your customer support hours?</p>
+        <p><b>A:</b> Our team is available 24/7 to assist you.</p>
+    </div>
+
+
+    <script>
+       async function sendMessage() {
+    const userInput = document.getElementById("user-input");
+    const chatBox = document.getElementById("chat-box");
+    const userMessage = userInput.value.trim();
+
+    if (userMessage === "") return; 
+
+
+    chatBox.innerHTML += `<p><b>You:</b> ${userMessage}</p>`;
+    
+  
+    userInput.value = "";
+
+    try {
+   
+        const response = await fetch("http://localhost:3000/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: userMessage }),
+        });
+
+        const data = await response.json();
+
+        
+        chatBox.innerHTML += `<p><b>Chatbot:</b> ${data.reply}</p>`;
+
+       
+        chatBox.scrollTop = chatBox.scrollHeight;
+    } catch (error) {
+        console.error("Error:", error);
+        chatBox.innerHTML += `<p style="color:red;"><b>Error:</b> Could not fetch response.</p>`;
+    }
+}
+
+function showEmergencyInfo() {
+    alert("Emergency Contacts:\nPolice: 100\nFire: 101\nAmbulance: 102\nInstant Help: 112");
+}
+
+    </script>
+</body>
+</html>  create same fronent of same desgin but now used react of it and tell me where to things
