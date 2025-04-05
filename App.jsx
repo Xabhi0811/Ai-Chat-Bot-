@@ -11,6 +11,8 @@ export default function App() {
       <Chat />
       <EmergencyInfo />
       <FAQ />
+
+      
     </div>
   );
 }
