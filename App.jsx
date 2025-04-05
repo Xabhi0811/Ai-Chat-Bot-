@@ -10,7 +10,7 @@ export default function App() {
       <h2 className="title">AI-Powered Public Safety Chatbot</h2>
       <Chat />
       <EmergencyInfo />
-      <FAQ />  
+      <FAQ/>  
     </div>
   );
 }
