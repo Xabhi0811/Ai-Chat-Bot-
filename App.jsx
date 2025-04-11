@@ -9,7 +9,7 @@ export default function App() {
     <div className="app">
       <h2 className="title">AI-Powered Public Safety Chatbot</h2>
       <Chat />
-      <EmergencyInfo />
+       <EmergencyInfo />
       <FAQ/>  
     </div>
   );
