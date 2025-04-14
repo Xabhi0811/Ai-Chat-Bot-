@@ -20,6 +20,7 @@ export default function Chat() {
 
 
       
+      
       const data = await response.json();
       setMessages([...newMessages, { user: "Chatbot", text: data.reply }]);
     } catch (error) {
