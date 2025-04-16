@@ -89,6 +89,7 @@ this my html file <!DOCTYPE html>
     chatBox.innerHTML += `<p><b>You:</b> ${userMessage}</p>`;
     
     userInput.value = "";
+           
 
     try {
         const response = await fetch("http://localhost:3000/chat", {
