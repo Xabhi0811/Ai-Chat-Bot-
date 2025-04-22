@@ -12,7 +12,5 @@ export default function App() {
        <EmergencyInfo />
       <FAQ/>  
     </div>
-  );
-
-  
+  );  
 }
