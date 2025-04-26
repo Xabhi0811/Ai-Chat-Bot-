@@ -39,7 +39,7 @@ export default function Chat() {
         placeholder="Ask me anything about safety..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
-    />
+      />
       <button className="send-btn" onClick={sendMessage}>Send</button>
     </div>
   );
