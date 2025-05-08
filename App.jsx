@@ -4,6 +4,7 @@ import EmergencyInfo from "./components/EmergencyInfo";
 import FAQ from "./components/FAQ";
 import "./App.css";
 
+
 export default function App() {
   return (
     <div className="app">
