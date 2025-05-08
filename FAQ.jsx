@@ -9,6 +9,5 @@ export default function FAQ() {
       <p><b>Q:</b> What are your customer support hours?</p>
       <p><b>A:</b> Our team is available 24/7 to assist you.</p>
     </div>
-
   );
 }
