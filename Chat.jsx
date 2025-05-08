@@ -25,6 +25,7 @@ export default function Chat() {
       setMessages([...newMessages, { user: "Chatbot", text: "Could not fetch response." }]);
     }
   };
+
   
   return (
     <div className="chat-container">
