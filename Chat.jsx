@@ -11,7 +11,6 @@ export default function Chat() {
     setMessages(newMessages);
     setInput("");
     
-
     try {
       const response = await fetch("http://localhost:3000/chat", {
         method: "POST",
