@@ -10,6 +10,7 @@ export default function Chat() {
     const newMessages = [...messages, { user: "You", text: input }];
     setMessages(newMessages);
     setInput("");
+    
 
     try {
       const response = await fetch("http://localhost:3000/chat", {
